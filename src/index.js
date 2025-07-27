@@ -1,10 +1,11 @@
 import express from "express"
 import connectDB from "./db/dbconnetction.js"
 import userRouter from "./routes/user.route.js"
-
 const app = express()
-
 app.use(express.json())
+
+
+
 // const person = {
 //   name:"demo",
 //   age:123,
