@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "bun": "^1.2.19",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
