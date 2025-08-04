@@ -1,7 +1,7 @@
 
 import User from "../models/user.model.js";
 export const getProfile = (req,res)=>{
-    
+    console.log(req.user)
     res.status(200).json({
       message:"okay that much for today"
     })
@@ -47,7 +47,7 @@ export const register = async (req,res)=>{
     res.status(400).json({
       message:"All field are required"
     })
-    return
+    return 
   }
   const user = await User.findOne({email})
   if(!user || !(await user.matchPassword(password))){
@@ -55,9 +55,11 @@ export const register = async (req,res)=>{
       message:"invalid email or password"
     })
   }
+ 
+  const token =user.generateAuthToken();
   res.status(200).json({
     message:"user logged in",
-    data:user._id
+    data:{user,token}
   })
  } catch (error) {
   console.log("eror login",error)

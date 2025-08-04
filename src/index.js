@@ -1,10 +1,11 @@
 import express from "express"
 import connectDB from "./db/dbconnetction.js"
 import userRouter from "./routes/user.route.js"
-
+import dotenv from "dotenv"
 import userData from "./data/userData.js"
 import User from "./models/user.model.js"
 
+dotenv.config({})
 const app = express()
 
 app.use(express.json())
